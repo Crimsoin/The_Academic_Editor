@@ -20,14 +20,14 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="logo.png" alt="The Academic Editor" class="logo-img" onerror="this.style.display='none'">
+                <img src="src/logo.png" alt="The Academic Editor" class="logo-img" onerror="this.style.display='none'">
                 <span>The Academic Editor</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#why-choose-us" class="nav-link">Why Choose Us</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#why-choose-us" class="nav-link">About Us</a></li>
+                <li><a href="#faqs" class="nav-link">FAQs</a></li>
+                <li><a href="#submit-manuscript" class="nav-link">Submit Manuscript</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -41,12 +41,12 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Transform Your Ideas into Published Masterpieces</h1>
-                <p><strong>Welcome to The Academic Editor</strong></p>
-                <p>your trusted partner in refining and perfecting academic and professional manuscripts. Whether you're a student, researcher, or professional, we provide expert editorial support to ensure your work meets the highest standards of academic excellence.</p>
+                <h1>We edit with excellence.</h1>
+                <h1>You publish with confidence.</h1>
+                <p>Trusted by researchers and academics worldwide, our expert editors refine your manuscript for clarity, accuracy, and impact—ensuring you're ready to submit with pride.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" id="inquireBtn">Inquire</button>
-                    <button class="btn btn-secondary">Learn More</button>
+                    <button class="btn btn-primary" id="inquireBtn">SUBMIT MANUSCRIPT</button>
+                    <button class="btn btn-secondary">GET A FREE QUOTE</button>
                 </div>
             </div>
             <div class="hero-image">
@@ -55,49 +55,60 @@
         </div>
     </section>
 
+    
+
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-edit"></i>
+            <h2>Our Top Services</h2>
+            <div class="services-grid improved-services">
+                <div class="service-card improved-card">
+                    <div class="service-icon icon-bg1">
+                        <i class="fas fa-spell-check"></i>
                     </div>
-                    <h3>Language Editing</h3>
-                    <p>Improve the readability and clarity of your manuscript, ensuring that grammar, punctuation, and syntax are flawless.</p>
+                    <h3>Academic Precision</h3>
+                    <p>Essential language editing for clear, accurate manuscripts</p>
                     <ul>
-                        <li>Grammar & syntax correction</li>
-                        <li>Punctuation refinement</li>
-                        <li>Clarity enhancement</li>
-                        <li>Readability improvement</li>
+                        <li>Grammar & spelling corrections</li>
+                        <li>Academic tone refinement</li>
+                        <li>Technical terminology check</li>
+                        <li>PhD editor final review</li>
                     </ul>
+                    <div class="service-note">
+                        <span>📌 Perfect for well-structured drafts needing language polish</span>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                <div class="service-card improved-card">
+                    <div class="service-icon icon-bg2">
+                        <i class="fas fa-layer-group"></i>
                     </div>
-                    <h3>Plagiarism Check</h3>
-                    <p>Receive a comprehensive report to ensure the originality of your work.</p>
+                    <h3>Editorial Excellence</h3>
+                    <p>Comprehensive editing for structure and clarity</p>
                     <ul>
-                        <li>Comprehensive originality scan</li>
-                        <li>Detailed plagiarism report</li>
-                        <li>Source identification</li>
-                        <li>Academic integrity assurance</li>
+                        <li>All Academic Precision features</li>
+                        <li>Structural improvement</li>
+                        <li>Logical flow enhancement</li>
+                        <li>In-depth academic review</li>
                     </ul>
+                    <div class="service-note">
+                        <span>📌 Ideal for papers needing organizational refinement</span>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-redo"></i>
+                <div class="service-card improved-card">
+                    <div class="service-icon icon-bg3">
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                    <h3>One-Time Revisions</h3>
-                    <p>Benefit from one round of revisions to address any feedback or additional corrections needed.</p>
+                    <h3>Expert Review</h3>
+                    <p>Field-specific review with expert feedback</p>
                     <ul>
-                        <li>Feedback implementation</li>
-                        <li>Additional corrections</li>
-                        <li>Quality refinement</li>
-                        <li>Final polish</li>
+                        <li>All Editorial Excellence features</li>
+                        <li>Subject expert review</li>
+                        <li>Research impact evaluation</li>
+                        <li>Journal submission guidance</li>
                     </ul>
+                    <div class="service-note">
+                        <span>📌 Best for high-impact journal submissions</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,9 +119,22 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Why Choose Us?</h2>
                     <p>Our team consists of highly skilled editors with a background in academic research, ensuring that your manuscript meets the rigorous standards of top-tier academic institutions.</p>
                     <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Publication-Ready Quality</h4>
+                                <p>Editing aligned with top journal expectations.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Confidential & Secure</h4>
+                                <p>Your work is handled with complete privacy and discretion.</p>
+                            </div>
+                        </div>
                         <div class="feature">
                             <i class="fas fa-user-graduate"></i>
                             <div>
@@ -123,27 +147,6 @@
                             <div>
                                 <h4>Fast and Reliable Service</h4>
                                 <p>Quick turnaround to meet your publication deadlines</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-dollar-sign"></i>
-                            <div>
-                                <h4>Competitive Pricing</h4>
-                                <p>Affordable rates without compromising on quality</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Quality Assurance</h4>
-                                <p>Clear, concise manuscripts with detailed plagiarism reports</p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-headset"></i>
-                            <div>
-                                <h4>Author Support</h4>
-                                <p>Dedicated support throughout the editing process</p>
                             </div>
                         </div>
                         <div class="feature">
@@ -162,32 +165,95 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Worked with Authors Section -->
+    <section id="authors" class="authors">
         <div class="container">
-            <h2>Get Started Today</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>languageediting@philippinecoding.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+63 947 457 0321</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Bro. Andrew Gonzalez Hall, De La Salle University, 2401 Taft Avenue, Malate, Manila Plaza, Philippines</span>
-                    </div>
+            <h2>Worked with Authors From</h2>
+            <div class="authors-image-grid">
+                <div class="authors-row">
+                    <div class="author-img"><img src="src/Uni-Logo/1.png" alt="University Logo 1"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/2.png" alt="University Logo 2"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/3.png" alt="University Logo 3"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/4.png" alt="University Logo 4"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/5.png" alt="University Logo 5"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/6.png" alt="University Logo 6"></div>
                 </div>
-                <div class="contact-form-container">
-                    <h3>Submit Your Manuscript Details</h3>
+                <div class="authors-row">
+                    <div class="author-img"><img src="src/Uni-Logo/7.png" alt="University Logo 7"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/8.png" alt="University Logo 8"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/9.png" alt="University Logo 9"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/10.png" alt="University Logo 10"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/11.png" alt="University Logo 11"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/12.png" alt="University Logo 12"></div>
+                </div>
+                <div class="authors-row">
+                    <div class="author-img"><img src="src/Uni-Logo/13.png" alt="University Logo 13"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/14.png" alt="University Logo 14"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/15.png" alt="University Logo 15"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/16.png" alt="University Logo 16"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/17.png" alt="University Logo 17"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/18.png" alt="University Logo 18"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/19.png" alt="University Logo 19"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/20.png" alt="University Logo 20"></div>
+                </div>
+                <div class="authors-row">
+                    <div class="author-img"><img src="src/Uni-Logo/21.png" alt="University Logo 21"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/22.png" alt="University Logo 22"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/23.png" alt="University Logo 23"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/24.png" alt="University Logo 24"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/25.png" alt="University Logo 25"></div>
+                    <div class="author-img"><img src="src/Uni-Logo/26.png" alt="University Logo 26"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Published in a Range of Top-Ranking Academic Journals Section -->
+    <section id="journals" class="journals">
+        <div class="container">
+            <h2 class="journals-title">Published in a Range of Top-Ranking Academic Journals</h2>
+            
+            <div class="journal-gallery-container">
+                <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="journal-gallery">
+                    <!-- Images will be added by JavaScript -->
+                </div>
+                <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Calculator Section -->
+    <section class="pricing-calculator-section">
+      <div class="pricing-calculator-container">
+        <h2 class="pricing-calculator-title">Pricing Calculator</h2>
+        <form class="pricing-calculator-form" id="pricingCalculatorForm">
+          <label for="pricingWordCount">Number of Words</label>
+          <input type="number" id="pricingWordCount" min="1" placeholder="Enter word count" required>
+
+          <label for="pricingServiceType">Service Type</label>
+          <select id="pricingServiceType" required>
+            <option value="academic">Academic Precision</option>
+            <option value="editorial">Editorial Excellence</option>
+            <option value="expert">Expert Review</option>
+          </select>
+
+          <div class="pricing-calculator-result" id="pricingCalculatorResult">Estimated Price: —</div>
+          <div class="pricing-calculator-note">For documents over 8,000 words, price is calculated per word.</div>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- Submit Manuscript Section -->
+    <section id="submit-manuscript" class="submit-manuscript">
+        <div class="container">
+            <h2>Submit Your Manuscript</h2>
+            <div class="submit-form-container">
                     <div class="google-form-wrapper">
                         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScehXkoh0w6KstqECUwYVtWmd36Ynec-HNidtAG1IF5uDE9Ww/viewform?embedded=true" 
                                 width="100%" 
-                                height="700" 
+                                height="600" 
                                 frameborder="0" 
                                 marginheight="0" 
                                 marginwidth="0">
@@ -197,51 +263,45 @@
                     <div class="form-note">
                         <p><i class="fas fa-shield-alt"></i> Your information is secure and confidential.</p>
                     </div>
-                </div>
             </div>
+            
         </div>
     </section>
 
+
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="The Academic Editor Logo" class="logo-img" onerror="this.style.display='none'">
-                        <span>The Academic Editor</span>
-                    </div>
-                    <p>Transform your academic manuscripts into publication-ready masterpieces with our professional English editing services.</p>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="src/logo.png" alt="The Academic Editor Logo" class="footer-logo-img">
+                    <h3>The Academic Editor</h3>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Language Editing</a></li>
-                        <li><a href="#services">Plagiarism Check</a></li>
-                        <li><a href="#services">One-Time Revisions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#why-choose-us">Why Choose Us</a></li>
-                        <li><a href="#contact">Get Quote</a></li>
-                        <li><a href="#services">Pricing</a></li>
-                        <li><a href="#contact">Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/PhilippineCodingCamp" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A89920169&keywords=Philippine%20Coding%20Camp&origin=ENTITY_SEARCH_HOME_HISTORY&sid=C%2Cl" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/PhilippineCodingCamp" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+                <p class="footer-description">
+                    The Academic Editor specializes in professional language editing and editorial services tailored for researchers, scholars, and academic professionals.
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 The Academic Editor. All rights reserved.</p>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#quote">Get Quote</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#faqs">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
+
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p class="footer-contact">
+                    <a href="mailto:TheAcademicEditor@email.com">TheAcademicEditor@email.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Academic Editor. All rights reserved.</p>
         </div>
     </footer>
 

@@ -1,5 +1,64 @@
+    // Authors Carousel Navigation
+    const authorsCarousel = document.getElementById('authorsCarousel');
+    const authorsPrev = document.getElementById('authorsCarouselPrev');
+    const authorsNext = document.getElementById('authorsCarouselNext');
+    if (authorsCarousel && authorsPrev && authorsNext) {
+        const scrollAmount = 350; // px per click
+        authorsPrev.addEventListener('click', () => {
+            authorsCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        authorsNext.addEventListener('click', () => {
+            authorsCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Pricing Calculator Logic
+    const pricingWordCountInput = document.getElementById('pricingWordCount');
+    const pricingServiceTypeSelect = document.getElementById('pricingServiceType');
+    const pricingCalculatorResult = document.getElementById('pricingCalculatorResult');
+
+    function calculatePricing() {
+        const wordCount = parseInt(pricingWordCountInput.value) || 0;
+        const serviceType = pricingServiceTypeSelect.value;
+        let price = 0;
+
+        if (serviceType === 'academic') {
+            if (wordCount <= 500) price = 59;
+            else if (wordCount <= 1000) price = 99;
+            else if (wordCount <= 3000) price = 199;
+            else if (wordCount <= 6000) price = 299;
+            else if (wordCount <= 8000) price = 499;
+            else price = wordCount * 0.06;
+        } else if (serviceType === 'editorial') {
+            if (wordCount <= 500) price = 99;
+            else if (wordCount <= 1000) price = 199;
+            else if (wordCount <= 3000) price = 449;
+            else if (wordCount <= 6000) price = 799;
+            else if (wordCount <= 8000) price = 999;
+            else price = wordCount * 0.15;
+        } else if (serviceType === 'expert') {
+            if (wordCount <= 500) price = 199;
+            else if (wordCount <= 1000) price = 399;
+            else if (wordCount <= 3000) price = 799;
+            else if (wordCount <= 6000) price = 1499;
+            else if (wordCount <= 8000) price = 1999;
+            else price = wordCount * 0.25;
+        }
+
+        let displayPrice = price > 0 ? `Estimated Price: €${price.toFixed(2)}` : 'Estimated Price: —';
+        pricingCalculatorResult.textContent = displayPrice;
+        pricingCalculatorResult.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            pricingCalculatorResult.style.transform = 'scale(1)';
+        }, 200);
+    }
+
+    if (pricingWordCountInput && pricingServiceTypeSelect) {
+        pricingWordCountInput.addEventListener('input', calculatePricing);
+        pricingServiceTypeSelect.addEventListener('change', calculatePricing);
+    }
     
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
@@ -39,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Quote Calculator
-    const wordCountInput = document.getElementById('wordCount');
+    const quoteWordCountInput = document.getElementById('wordCount');
     const serviceTypeSelect = document.getElementById('serviceType');
     const turnaroundSelect = document.getElementById('turnaround');
     const totalPriceDisplay = document.getElementById('totalPrice');
@@ -62,20 +121,215 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Add event listeners for quote calculator
-    if (wordCountInput && serviceTypeSelect && turnaroundSelect) {
-        wordCountInput.addEventListener('input', calculateQuote);
+    if (quoteWordCountInput && serviceTypeSelect && turnaroundSelect) {
+        quoteWordCountInput.addEventListener('input', calculateQuote);
         serviceTypeSelect.addEventListener('change', calculateQuote);
         turnaroundSelect.addEventListener('change', calculateQuote);
     }
 
-    // Inquire Button - scroll to contact section
+    // Journal Slider functionality
+    const journalImages = [
+        "src/Journal-Logo/1.png",
+        "src/Journal-Logo/2.png",
+        "src/Journal-Logo/3.png",
+        "src/Journal-Logo/4.png",
+        "src/Journal-Logo/5.png",
+        "src/Journal-Logo/6.png",
+        "src/Journal-Logo/7.png",
+        "src/Journal-Logo/8.png",
+        "src/Journal-Logo/9.png",
+        "src/Journal-Logo/10.png"
+    ];
+
+    const galleryContainer = document.querySelector('.journal-gallery');
+    const prevButton = document.querySelector('.gallery-nav.prev');
+    const nextButton = document.querySelector('.gallery-nav.next');
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    // Initialize gallery with first three images
+    function initGallery() {
+        if (!galleryContainer) return;
+
+        // Clear existing images
+        galleryContainer.innerHTML = '';
+
+        // Create initial images
+        for (let i = 0; i < 3; i++) {
+            const img = document.createElement('img');
+            img.src = journalImages[(currentIndex + i) % journalImages.length];
+            img.alt = `Journal Logo ${(currentIndex + i) % journalImages.length + 1}`;
+            img.classList.add(i === 0 ? 'left' : i === 1 ? 'center' : 'right');
+            img.dataset.position = i === 0 ? 'left' : i === 1 ? 'center' : 'right';
+            
+            // Add load event to ensure images are visible
+            img.onload = function() {
+                this.style.visibility = 'visible';
+            };
+            img.style.visibility = 'hidden';
+            
+            galleryContainer.appendChild(img);
+        }
+    }
+
+    // Function to update image sources after rotation
+    function updateImageSources() {
+        const images = galleryContainer.querySelectorAll('img');
+        images.forEach((img, index) => {
+            const position = img.dataset.position;
+            if (position === 'left') {
+                img.src = journalImages[currentIndex];
+            } else if (position === 'center') {
+                img.src = journalImages[(currentIndex + 1) % journalImages.length];
+            } else {
+                img.src = journalImages[(currentIndex + 2) % journalImages.length];
+            }
+        });
+    }
+
+    // Function to rotate images
+    function rotateImages(direction) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        const images = galleryContainer.querySelectorAll('img');
+        
+        if (direction === 'next') {
+            currentIndex = (currentIndex + 1) % journalImages.length;
+            
+            // Remove current transitions
+            images.forEach(img => img.style.transition = 'none');
+            
+            // Set new positions with transitions
+            setTimeout(() => {
+                images.forEach(img => img.style.transition = 'all 0.5s ease');
+                
+                images.forEach(img => {
+                    const currentPosition = img.dataset.position;
+                    if (currentPosition === 'left') {
+                        img.classList.remove('left');
+                        img.classList.add('center');
+                        img.dataset.position = 'center';
+                    } else if (currentPosition === 'center') {
+                        img.classList.remove('center');
+                        img.classList.add('right');
+                        img.dataset.position = 'right';
+                    } else {
+                        img.classList.remove('right');
+                        img.classList.add('left');
+                        img.dataset.position = 'left';
+                    }
+                });
+                
+                // Update image sources after position changes
+                updateImageSources();
+            }, 50);
+        } else {
+            currentIndex = (currentIndex - 1 + journalImages.length) % journalImages.length;
+            
+            // Remove current transitions
+            images.forEach(img => img.style.transition = 'none');
+            
+            // Set new positions with transitions
+            setTimeout(() => {
+                images.forEach(img => img.style.transition = 'all 0.5s ease');
+                
+                // Update classes for rotation
+                images[0].classList.remove('left');
+                images[0].classList.add('right');
+                
+                images[1].classList.remove('center');
+                images[1].classList.add('left');
+                
+                images[2].classList.remove('right');
+                images[2].classList.add('center');
+                
+                // Update all image sources
+                images[0].src = journalImages[(currentIndex + 2) % journalImages.length];
+                images[1].src = journalImages[currentIndex];
+                images[2].src = journalImages[(currentIndex + 1) % journalImages.length];
+            }, 50);
+        }
+
+        // Reset animation flag after transition
+        setTimeout(() => {
+            isAnimating = false;
+        }, 500);
+    }
+
+    // Initialize gallery on load
+    initGallery();
+
+    // Add event listeners for navigation buttons
+    if (nextButton) {
+        nextButton.addEventListener('click', () => rotateImages('next'));
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener('click', () => rotateImages('prev'));
+    }
+
+    // Auto-advance slides every 5 seconds
+    setInterval(() => {
+        if (!isAnimating) {
+            rotateImages('next');
+        }
+    }, 5000);
+
+    if (slidesContainer) {
+        const prevSlide = slidesContainer.querySelector('.prev-slide');
+        const currentSlide = slidesContainer.querySelector('.current-slide');
+        const nextSlide = slidesContainer.querySelector('.next-slide');
+
+        function updateSlides() {
+            const prevIndex = (currentIndex - 1 + journalImages.length) % journalImages.length;
+            const nextIndex = (currentIndex + 1) % journalImages.length;
+
+            // Apply transition classes
+            prevSlide.className = 'slide prev-slide';
+            currentSlide.className = 'slide current-slide';
+            nextSlide.className = 'slide next-slide';
+
+            // Update images with fade effect
+            prevSlide.querySelector('img').src = journalImages[prevIndex];
+            currentSlide.querySelector('img').src = journalImages[currentIndex];
+            nextSlide.querySelector('img').src = journalImages[nextIndex];
+        }
+
+        // Initial setup
+        updateSlides();
+
+
+        // Event listeners for next and previous buttons
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % journalImages.length;
+                updateSlides();
+            });
+        }
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + journalImages.length) % journalImages.length;
+                updateSlides();
+            });
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % journalImages.length;
+            updateSlides();
+        }, 5000);
+    }
+
+    // Inquire Button - scroll to submit manuscript section
     const inquireBtn = document.getElementById('inquireBtn');
-    const contactSection = document.getElementById('contact');
+    const submitSection = document.getElementById('submit-manuscript');
     
-    if (inquireBtn && contactSection) {
+    if (inquireBtn && submitSection) {
         inquireBtn.addEventListener('click', function() {
             const headerOffset = 70;
-            const elementPosition = contactSection.getBoundingClientRect().top;
+            const elementPosition = submitSection.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
             window.scrollTo({
@@ -101,44 +355,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // Order Now Button
-    const orderNowBtn = document.getElementById('orderNowBtn');
     
-    if (orderNowBtn) {
-        orderNowBtn.addEventListener('click', function() {
-            const wordCount = parseInt(wordCountInput.value) || 0;
-            const serviceType = serviceTypeSelect.options[serviceTypeSelect.selectedIndex].text;
-            const turnaround = turnaroundSelect.options[turnaroundSelect.selectedIndex].text;
-            const totalPrice = totalPriceDisplay.textContent;
-            
-            if (wordCount === 0) {
-                alert('Please enter the number of words for your document.');
-                wordCountInput.focus();
-                return;
-            }
-            
-            // Create order summary
-            const orderSummary = `Order Summary:
-            
-Word Count: ${wordCount} words
-Service Type: ${serviceType}
-Turnaround: ${turnaround}
-Total Price: ${totalPrice}
 
-Thank you for choosing ProofPerfect! We will contact you shortly to proceed with your order.`;
-            
-            alert(orderSummary);
-            
-            // In a real application, this would submit to a server
-            console.log('Order details:', {
-                wordCount,
-                serviceType,
-                turnaround,
-                totalPrice
-            });
-        });
-    }
 
     // Contact Form Submission
     const contactForm = document.getElementById('contactForm');
