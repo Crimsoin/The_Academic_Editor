@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Academic Editor - English Editing Services</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="src/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="src/apple-touch-icon.png">
+    
     
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -41,16 +37,21 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>We edit with excellence.</h1>
-                <h1>You publish with confidence.</h1>
+                <h1>We Edit With Excellence.</h1>
+                <h1>You Publish With Confidence.</h1>
                 <p>Trusted by researchers and academics worldwide, our expert editors refine your manuscript for clarity, accuracy, and impact—ensuring you're ready to submit with pride.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" id="inquireBtn">SUBMIT MANUSCRIPT</button>
-                    <button class="btn btn-secondary">GET A FREE QUOTE</button>
+                    <a href="#submit-manuscript" class="btn btn-primary" id="inquireBtn">SUBMIT MANUSCRIPT</a>
+                    <a href="#pricing-calculator-section" class="btn btn-secondary">GET A FREE QUOTE</a>
                 </div>
             </div>
+
+            <div class="hero-image-container">
+                <img src=src/hero-image.png alt="Hero Image" class="hero-img" onerror="this.style.display='none'">                
+            </div>
+
             <div class="hero-image">
-                <i class="fas fa-file-alt"></i>
+                
             </div>
         </div>
     </section>
@@ -111,6 +112,38 @@
                     </div>
                 </div>
             </div>
+            <div class="services-view-more-container" style="text-align:center; margin-top:2rem;">
+                <button class="btn btn-tertiary" id="viewMoreServicesBtn" style="min-width:180px; color: #5a5a5a;">View More</button>
+            </div>
+            <div class="services-extra-grid" id="servicesExtraGrid" style="display:none; gap:2rem; justify-content:center; margin-top:2rem; flex-wrap:wrap;">
+                <div class="service-card improved-card" style="max-width:350px; width:100%;">
+                    <div class="service-icon icon-bg4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Plagiarism Check</h3>
+                    <p>Receive a comprehensive report to ensure the originality of your work.</p>
+                    <ul>
+                        <li>Comprehensive originality scan</li>
+                        <li>Detailed plagiarism report</li>
+                        <li>Source identification</li>
+                        <li>Academic integrity assurance</li>
+                    </ul>
+                </div>
+                <div class="service-card improved-card" style="max-width:350px; width:100%;">
+                    <div class="service-icon icon-bg5">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>One-Time Revisions</h3>
+                    <p>Benefit from one round of revisions to address any feedback or additional corrections needed.</p>
+                    <ul>
+                        <li>Feedback implementation</li>
+                        <li>Additional corrections</li>
+                        <li>Quality refinement</li>
+                        <li>Final polish</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
         </div>
     </section>
 
@@ -119,7 +152,8 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <p>Our team consists of highly skilled editors with a background in academic research, ensuring that your manuscript meets the rigorous standards of top-tier academic institutions.</p>
+                    <h2>Why Choose Us</h2>
+                    
                     <div class="features">
                         <div class="feature">
                             <i class="fas fa-certificate"></i>
@@ -158,9 +192,14 @@
                         </div>
                     </div>
                 </div>
+
+                
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1589820675999-b1fc94f318a3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Writing and Manuscript Editing" class="about-img">
                 </div>
+
+
+
             </div>
         </div>
     </section>
@@ -213,63 +252,178 @@
         <div class="container">
             <h2 class="journals-title">Published in a Range of Top-Ranking Academic Journals</h2>
             
-            <div class="journal-gallery-container">
-                <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
-                <div class="journal-gallery">
-                    <!-- Images will be added by JavaScript -->
+            <aside class="carousel">
+                <div class="carousel__wrapper">
+                <div class="item" id="slide-0"><img src=src/Journal-Logo/1.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-1"><img src=src/Journal-Logo/2.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-2"><img src=src/Journal-Logo/3.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-3"><img src=src/Journal-Logo/4.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-4"><img src=src/Journal-Logo/5.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-5"><img src=src/Journal-Logo/6.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-6"><img src=src/Journal-Logo/7.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-7"><img src=src/Journal-Logo/8.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-8"><img src=src/Journal-Logo/9.png alt="" width="418" height="418"/></div>
+                <div class="item" id="slide-9"><img src=src/Journal-Logo/10.png alt="" width="418" height="418"/></div>
                 </div>
-                <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
-            </div>
+            </aside>
         </div>
     </section>
 
     <!-- Pricing Calculator Section -->
-    <section class="pricing-calculator-section">
-      <div class="pricing-calculator-container">
-        <h2 class="pricing-calculator-title">Pricing Calculator</h2>
-        <form class="pricing-calculator-form" id="pricingCalculatorForm">
-          <label for="pricingWordCount">Number of Words</label>
-          <input type="number" id="pricingWordCount" min="1" placeholder="Enter word count" required>
+    <section id="pricing-calculator-section" class="pricing-calculator-section">
 
-          <label for="pricingServiceType">Service Type</label>
-          <select id="pricingServiceType" required>
-            <option value="academic">Academic Precision</option>
-            <option value="editorial">Editorial Excellence</option>
-            <option value="expert">Expert Review</option>
-          </select>
+        <div class="pricing-calculator-container">
+            <h2 class="pricing-calculator-title">Pricing Calculator</h2>
+            
+            <form class="pricing-calculator-form" id="pricingCalculatorForm">
+            <label for="pricingWordCount">Number of Words</label>
+            <input type="number" id="pricingWordCount" min="1" placeholder="Enter word count" required>
 
-          <div class="pricing-calculator-result" id="pricingCalculatorResult">Estimated Price: —</div>
-          <div class="pricing-calculator-note">For documents over 8,000 words, price is calculated per word.</div>
-        </form>
+            <label for="pricingServiceType">Service Type</label>
+            <select id="pricingServiceType" required>
+                <option value="academic">Academic Precision</option>
+                <option value="editorial">Editorial Excellence</option>
+                <option value="expert">Expert Review</option>
+            </select>
+
+            <div class="pricing-calculator-result" id="pricingCalculatorResult">Estimated Price: —</div>
+            <div class="pricing-calculator-note">For documents over 8,000 words, price is calculated per word.</div>
+            </form>
+        </div>
+
+
+        <div class="pricing-offer">
+
+            <h2 class="pricing-offer-title">Our Top Offers</h2>
+            <div class="offer-card">
+                <div class="offer-content">
+                    <h3>Academic Precision</h3>
+                    <p>Essential language editing for clear, accurate manuscripts.</p>          
+                </div>  
+            </div>
+
+            <div class="offer-card">
+                <div class="offer-content">
+                    <h3>Editorial Excellence</h3>
+                    <p>Comprehensive editing for style, clarity, and impact.</p>          
+                </div>  
+            </div>
+
+            <div class="offer-card">
+                <div class="offer-content">
+                    <h3>Expert Review</h3>
+                    <p>In-depth review by subject matter experts for maximum impact.</p>          
+                </div>  
+            </div>
       </div>
     </section>
+
+
+    
+
+
+
+
+
 
 
     <!-- Submit Manuscript Section -->
     <section id="submit-manuscript" class="submit-manuscript">
         <div class="container">
-            <h2>Submit Your Manuscript</h2>
-            <div class="submit-form-container">
-                    <div class="google-form-wrapper">
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScehXkoh0w6KstqECUwYVtWmd36Ynec-HNidtAG1IF5uDE9Ww/viewform?embedded=true" 
-                                width="100%" 
-                                height="600" 
-                                frameborder="0" 
-                                marginheight="0" 
-                                marginwidth="0">
-                            Loading form...
-                        </iframe>
+
+
+
+            <!-- old submitIntro -->
+            <div id="submitIntro">
+                <div class="submit-intro-icon">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <h2 class="submit-intro-title">Your Research Deserves to Be Read.</h2>
+                
+                <h3 class="submit-intro-subtitle">Let's Make It Ready.</h3>
+                <p class="submit-intro-description">
+                    Join thousands of researchers who trust us to refine their manuscripts for top-tier journal submissions. 
+                    Our expert editors ensure your work meets the highest academic standards.
+                </p>
+
+                <div class="submit-intro-features">
+                    <div class="submit-intro-feature">
+                        <i class="fas fa-check-circle"></i>
+                            <span>PhD-level editors</span>
                     </div>
-                    <div class="form-note">
-                        <p><i class="fas fa-shield-alt"></i> Your information is secure and confidential.</p>
+                    <div class="submit-intro-feature">
+                        <i class="fas fa-clock"></i>
+                            <span>Fast turnaround</span>
                     </div>
+                    <div class="submit-intro-feature">
+                        <i class="fas fa-shield-alt"></i>
+                            <span>100% confidential</span>
+                    </div>
+                </div>  
+        
+                <button class="btn btn-primary" id="showSubmitFormBtn" style="margin-top: 32px; min-width: 180px;">
+                    <i class="fas fa-paper-plane"></i>
+                    Submit Your Manuscript
+                </button>
             </div>
+
+
             
+
+
+
+
+
+            <div class="submit-form-container" id="submitFormContainer" style="display:none;">
+                <h2 id="submitFormHeading" style="text-align:center; margin-bottom:24px; display:none; color: white; font-size: 30px;">Start Writing With Our Expert Editors</h2>
+                <div class="google-form-wrapper">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScehXkoh0w6KstqECUwYVtWmd36Ynec-HNidtAG1IF5uDE9Ww/viewform?embedded=true" 
+                            width="700" 
+                            height="600" 
+                            frameborder="0" 
+                            marginheight="0" 
+                            marginwidth="0">
+                        Loading form...
+                    </iframe>
+                </div>
+            </div>
         </div>
     </section>
 
 
     <!-- Footer -->
+    <!-- FAQs Section -->
+    <section id="faqs" class="faqs-section">
+      <div class="container">
+        <h2 class="faqs-title">Frequently Asked Questions</h2>
+        <div class="faqs-list">
+          <div class="faq-item">
+            <h3 class="faq-question">What types of documents do you edit?</h3>
+            <div class="faq-answer">We edit research papers, journal articles, dissertations, theses, grant proposals, and more. If you have a specific document, feel free to contact us for confirmation.</div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How long does the editing process take?</h3>
+            <div class="faq-answer">Standard turnaround is 3-5 business days, but expedited options are available. Turnaround time depends on word count and service type.</div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Are your editors subject-matter experts?</h3>
+            <div class="faq-answer">Yes, our editors have advanced degrees and experience in a wide range of academic fields, ensuring your work is reviewed by a relevant expert.</div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Is my document confidential?</h3>
+            <div class="faq-answer">Absolutely. We treat all documents with strict confidentiality and never share your work with third parties.</div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">How do I pay for your services?</h3>
+            <div class="faq-answer">We accept major credit cards and PayPal. Payment instructions will be provided after your quote is confirmed.</div>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-question">Can I request revisions after editing?</h3>
+            <div class="faq-answer">Yes, one round of revisions is included with most services. Additional revisions can be arranged if needed.</div>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
@@ -310,6 +464,6 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src="script.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'></script><script  src="./script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-    // Authors Carousel Navigation
+// Authors Carousel Navigation
     const authorsCarousel = document.getElementById('authorsCarousel');
     const authorsPrev = document.getElementById('authorsCarouselPrev');
     const authorsNext = document.getElementById('authorsCarouselNext');
@@ -13,6 +13,60 @@
     }
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Show Google Form and heading on Submit Manuscript button click
+    const showSubmitFormBtn = document.getElementById('showSubmitFormBtn');
+    const submitIntro = document.getElementById('submitIntro');
+    const submitFormContainer = document.getElementById('submitFormContainer');
+    const submitFormHeading = document.getElementById('submitFormHeading');
+    const submitFormSubtext = document.querySelector('.submit-form-subtext');
+    
+    if (showSubmitFormBtn && submitIntro && submitFormContainer && submitFormHeading) {
+        showSubmitFormBtn.addEventListener('click', function() {
+            submitIntro.classList.add('hide');
+            setTimeout(function() {
+                submitIntro.style.display = 'none';
+                submitFormContainer.style.display = 'block';
+                submitFormHeading.style.display = 'block';
+                if (submitFormSubtext) {
+                    submitFormSubtext.style.display = 'block';
+                }
+            }, 500); // match CSS transition duration
+        });
+    }
+    // View More Services Button functionality
+    const viewMoreBtn = document.getElementById('viewMoreServicesBtn');
+    const extraGrid = document.getElementById('servicesExtraGrid');
+    if (viewMoreBtn && extraGrid) {
+        viewMoreBtn.addEventListener('click', function() {
+            if (extraGrid.style.display === 'none') {
+                extraGrid.style.display = 'flex';
+                viewMoreBtn.textContent = 'View Less';
+            } else {
+                extraGrid.style.display = 'none';
+                viewMoreBtn.textContent = 'View More';
+            }
+        });
+    }
+    // FAQ Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all other FAQs
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            item.classList.toggle('active');
+        });
+    });
 
     // Pricing Calculator Logic
     const pricingWordCountInput = document.getElementById('pricingWordCount');
@@ -327,15 +381,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitSection = document.getElementById('submit-manuscript');
     
     if (inquireBtn && submitSection) {
-        inquireBtn.addEventListener('click', function() {
-            const headerOffset = 70;
-            const elementPosition = submitSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
+        inquireBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            setTimeout(function() {
+                const headerOffset = 70;
+                const elementPosition = submitSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }, 10);
         });
     }
 
@@ -612,4 +668,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const loadTime = performance.now();
         console.log(`Page loaded in ${Math.round(loadTime)}ms`);
     });
+    
+    // FAQ toggle functionality
+    
+});
+
+
+"use strict";
+// common idea: https://dribbble.com/shots/20364660-Nibble-Health-Identity-Social-Posting
+// carousel animation: https://codepen.io/aija/details/xvXWoK
+let CHECKED = false;
+document.addEventListener("pointerdown", (e) => {
+    CHECKED = !CHECKED;
+    document.documentElement.style.setProperty("--light", CHECKED ? 1 : 0);
 });
