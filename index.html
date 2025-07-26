@@ -15,15 +15,17 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
+            <a href="#home" class="nav-logo" style="text-decoration:none;">
                 <img src="src/logo.png" alt="The Academic Editor" class="logo-img" onerror="this.style.display='none'">
                 <span>The Academic Editor</span>
-            </div>
+            </a>
             <ul class="nav-menu">
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#why-choose-us" class="nav-link">About Us</a></li>
                 <li><a href="#faqs" class="nav-link">FAQs</a></li>
-                <li><a href="#submit-manuscript" class="nav-link">Submit Manuscript</a></li>
+                <li><a href="#submit-manuscript" class="nav-link nav-btn">Submit Manuscript</a></li>
+                
+
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -368,18 +370,12 @@
             </div>
 
 
-            
-
-
-
-
+        
 
             <div class="submit-form-container" id="submitFormContainer" style="display:none;">
-                <h2 id="submitFormHeading" style="text-align:center; margin-bottom:24px; display:none; color: white; font-size: 30px;">Start Writing With Our Expert Editors</h2>
+                <h2 id="submitFormHeading" class="submit-form-heading">Start Writing With Our Expert Editors</h2>
                 <div class="google-form-wrapper">
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScehXkoh0w6KstqECUwYVtWmd36Ynec-HNidtAG1IF5uDE9Ww/viewform?embedded=true" 
-                            width="700" 
-                            height="600" 
                             frameborder="0" 
                             marginheight="0" 
                             marginwidth="0">
@@ -421,6 +417,24 @@
             <h3 class="faq-question">Can I request revisions after editing?</h3>
             <div class="faq-answer">Yes, one round of revisions is included with most services. Additional revisions can be arranged if needed.</div>
           </div>
+        
+          <div class="faq-item">
+            <h3 class="faq-question">What payment methods do you accept?</h3>
+            <div class="faq-answer">We accept major credit and debit cards through Payoneer, as well as bank transfers. Please note that all transfer and processing fees must be shouldered by the buyer. Detailed payment instructions will be provided once your quote is confirmed.</div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Are your editors subject-matter experts?</h3>
+            <div class="faq-answer">Yes. Our editors hold advanced degrees and have experience across a wide range of academic disciplines, ensuring your work is reviewed by someone with relevant expertise. All documents also undergo a final check by a senior reviewer with a doctorate degree to ensure the highest quality.</div>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">What file formats do you accept?</h3>
+            <div class="faq-answer">We accept LaTeX (.tex), Microsoft Word (.doc/.docx), and PDF (.pdf) files.</div>
+          </div>
+
+
+
         </div>
       </div>
     </section>
@@ -464,6 +478,7 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'></script><script  src="./script.js"></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'></script>
+    <script src="script.js"></script>
 </body>
 </html>

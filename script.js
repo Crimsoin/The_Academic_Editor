@@ -1,4 +1,6 @@
-// Authors Carousel Navigation
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Authors Carousel Navigation
     const authorsCarousel = document.getElementById('authorsCarousel');
     const authorsPrev = document.getElementById('authorsCarouselPrev');
     const authorsNext = document.getElementById('authorsCarouselNext');
@@ -11,8 +13,6 @@
             authorsCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
     }
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
     // Show Google Form and heading on Submit Manuscript button click
     const showSubmitFormBtn = document.getElementById('showSubmitFormBtn');
     const submitIntro = document.getElementById('submitIntro');
@@ -133,23 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 70;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+   
 
     // Quote Calculator
     const quoteWordCountInput = document.getElementById('wordCount');
